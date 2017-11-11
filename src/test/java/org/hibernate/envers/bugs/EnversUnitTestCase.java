@@ -6,6 +6,7 @@
  */
 package org.hibernate.envers.bugs;
 
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.envers.AuditReader;
@@ -52,8 +53,7 @@ public class EnversUnitTestCase extends AbstractEnversTestCase {
 
 	// Add your tests, using standard JUnit.
 	@Test
-	public void hhh123Test() throws Exception {
-		AuditReader reader = getAuditReader();
-		// Do stuff...
+	public void hhh12089Test() throws Exception {
+		new MetadataSources(serviceRegistry()).getMetadataBuilder().build();
 	}
 }
